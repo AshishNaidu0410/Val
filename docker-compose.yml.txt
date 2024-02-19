@@ -1,0 +1,15 @@
+version: '3'
+services:
+  springboot:
+    build:
+      context: .  # Use the current directory as the build context
+      dockerfile: Dockerfile  # Specify the Dockerfile
+    container_name: OI_service1
+    ports:
+      - "8089:8089"
+    networks:
+      - ola_network
+
+networks:
+  ola_network:
+    driver: bridge
